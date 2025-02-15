@@ -1,0 +1,46 @@
+{
+  "AppLayout": {
+    "home": "Home",
+    "logout": "Logout"
+  },
+
+  "LocaleSwitcher": {
+    "fa": "Persian",
+    "en": "English",
+    "label": "Language"
+  },
+
+  "MESSAGES_TRY_AGAIN": "There was some problem please try again.",
+
+  "VALIDATION_REQUIRED": "{field} is required",
+  "VALIDATION_CHARACTER_COUNT": "{field} must be at least {count} characters!",
+
+  "LOGIN_SIGN_IN": "Sign In",
+  "LOGIN_DESCRIPTION": "Enter your email and password to sign in!",
+  "LOGIN_EMAIL": "Email Address",
+  "LOGIN_EMAIL_PLACEHOLDER": "Enter your email",
+  "LOGIN_PASSWORD": "Password",
+  "LOGIN_PASSWORD_PLACEHOLDER": "Enter your password",
+  "LOGIN_REMEMBER_ME": "Remember me",
+  "LOGIN_NOT_REGISTERED": "Not registered yet?",
+  "LOGIN_CREATE_ACCOUNT": "Create an account",
+  "LOGIN_SIGN_IN_GOOGLE": "Sign In with Google",
+  "LOGIN_OR": "or",
+  "LOGIN_SUCCESS_MESSAGE": "Your are successfully logged in!",
+  "LOGIN_ERROR_MESSAGE": "There was a problem logging in!",
+
+  "HEADER_TITLE": "Welcome",
+
+  "SIDEBAR_TITLE": "App Menu",
+  "SIDEBAR_DASHBOARD": "Dashboard",
+  "SIDEBAR_USERS": "Users",
+
+  "FORM_SUBMIT": "Submit",
+  "FORM_CANCEL": "Cancel",
+  "FORM_SUBMITTING": "Submitting",
+
+  "DIALOG_TITLE": "Delete Item",
+  "DIALOG_DELETE": "Delete",
+  "DIALOG_CANCEL": "Cancel",
+  "DIALOG_MESSAGE": "Are you sure you want to delete '{{title}}'?"
+}

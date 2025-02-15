@@ -1,0 +1,46 @@
+{
+  "AppLayout": {
+    "home": "خانه",
+    "logout": "خروج"
+  },
+
+  "LocaleSwitcher": {
+    "fa": "فارسی",
+    "en": "انگلیسی",
+    "label": "Sprache"
+  },
+
+  "MESSAGES_TRY_AGAIN": "مشکلی پیش آمده است لطفا مجدد تلاش کنید",
+
+  "VALIDATION_REQUIRED": "{field} اجباری میباشد!",
+  "VALIDATION_CHARACTER_COUNT": "{field} باید حداقل {count} حرف باشد!",
+
+  "LOGIN_SIGN_IN": "ورود به سیستم",
+  "LOGIN_DESCRIPTION": "اطلاعات کاربری خود را وارد نمایید.",
+  "LOGIN_EMAIL": "آدرس ایمیل",
+  "LOGIN_EMAIL_PLACEHOLDER": "ایمیل خود را وارد کنید",
+  "LOGIN_PASSWORD": "رمز عبور",
+  "LOGIN_PASSWORD_PLACEHOLDER": "رمز عبور خود را وارد کنید",
+  "LOGIN_REMEMBER_ME": "مرا به خاطر بسپار",
+  "LOGIN_NOT_REGISTERED": "هنوز ثبت نام نکرده اید؟",
+  "LOGIN_CREATE_ACCOUNT": "ایجاد حساب کاربری",
+  "LOGIN_SIGN_IN_GOOGLE": "ورود با گوگل",
+  "LOGIN_OR": "یا",
+  "LOGIN_SUCCESS_MESSAGE": "با موفقیت وارد شدید!",
+  "LOGIN_ERROR_MESSAGE": "مشکلی پیش آمده!",
+
+  "HEADER_TITLE": "خوش آمدید",
+
+  "SIDEBAR_TITLE": "لیست منو",
+  "SIDEBAR_DASHBOARD": "پیشخوان",
+  "SIDEBAR_USERS": "کاربران",
+
+  "FORM_SUBMIT": "ثبت",
+  "FORM_CANCEL": "انصراف",
+  "FORM_SUBMITTING": "در حال ثبت",
+
+  "DIALOG_TITLE": "حذف",
+  "DIALOG_DELETE": "حذف",
+  "DIALOG_CANCEL": "انصراف",
+  "DIALOG_MESSAGE": "آیا از حذف این مورد اطمینان دارید؟"
+}

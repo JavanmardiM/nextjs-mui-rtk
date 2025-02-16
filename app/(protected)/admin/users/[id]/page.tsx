@@ -19,6 +19,7 @@ import {
 import { useTranslations } from "next-intl";
 import { User } from "@/types/user";
 import { useRouter, useParams } from "next/navigation";
+import { useToastHandler } from "@/hooks/useToastHandler";
 
 export default function UserPage() {
   const { id } = useParams();
@@ -27,6 +28,7 @@ export default function UserPage() {
   const { data: userData, isLoading } = useFetchUsersQuery(1);
   const [updateUser] = useUpdateUserMutation();
   const [user, setUser] = useState<User | null>(null);
+  const { showToast } = useToastHandler();
 
   useEffect(() => {
     if (userData?.data && id) {
@@ -46,7 +48,11 @@ export default function UserPage() {
       updateUser({ id: user.id, user })
         .unwrap()
         .then(() => {
+          showToast(t("USER_EDIT_SUCCESS"), "success");
           router.push("/admin/users");
+        })
+        .catch(() => {
+          showToast(t("USER_EDIT_ERROR"), "error");
         });
     }
   };

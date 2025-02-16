@@ -42,5 +42,12 @@
   "DIALOG_TITLE": "حذف",
   "DIALOG_DELETE": "حذف",
   "DIALOG_CANCEL": "انصراف",
-  "DIALOG_MESSAGE": "آیا از حذف این مورد اطمینان دارید؟"
+  "DIALOG_MESSAGE": "آیا از حذف این مورد اطمینان دارید؟",
+
+  "USER_LIST": "لیست کاربران",
+  "USER_USERNAME": "نام : {firstName} {lastName}",
+  "USER_VIEW": "نمایش",
+  "USER_EDIT": "ویرایش",
+  "USER_DELETE": "حذف",
+  "USER_ERROR_LOADING": "دریافت لیست کاربران با مشکل مواجه شد!"
 }

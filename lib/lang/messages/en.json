@@ -42,5 +42,12 @@
   "DIALOG_TITLE": "Delete Item",
   "DIALOG_DELETE": "Delete",
   "DIALOG_CANCEL": "Cancel",
-  "DIALOG_MESSAGE": "Are you sure you want to delete '{{title}}'?"
+  "DIALOG_MESSAGE": "Are you sure you want to delete '{{title}}'?",
+
+  "USER_LIST": "User List",
+  "USER_USERNAME": "Full Name: {firstName} {lastName}",
+  "USER_VIEW": "View",
+  "USER_EDIT": "Edit",
+  "USER_DELETE": "Delete",
+  "USER_ERROR_LOADING": "Failed to load users."
 }

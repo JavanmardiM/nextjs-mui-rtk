@@ -1,25 +1,24 @@
-import { NextRequest, NextResponse } from "next/server";
+import { NextResponse } from "next/server";
+import type { NextRequest } from "next/server";
 import { getUserToken } from "./lib/auth";
 
-export default async function middleware(request: NextRequest) {
+export async function middleware(req: NextRequest) {
   const { token } = await getUserToken();
+  const url = req.nextUrl.clone();
 
-  const signInUrl = new URL("/login", request.url);
-  const dashboardUrl = new URL("/admin/dashboard", request.url);
-
-  if (!token) {
-    if (request.nextUrl.pathname === "/login") {
-      return NextResponse.next();
-    }
-
-    return NextResponse.redirect(signInUrl);
+  if (!token && url.pathname !== "/login") {
+    url.pathname = "/login";
+    return NextResponse.redirect(url);
   }
 
-  if (request.nextUrl.pathname === "/login") {
-    return NextResponse.redirect(dashboardUrl);
+  if (url.pathname === "/login" && token) {
+    url.pathname = "/admin/dashboard";
+    return NextResponse.redirect(url);
   }
+
+  return NextResponse.next();
 }
 
 export const config = {
-  matcher: ["/login", "/admin/:path*"],
+  matcher: ["/admin/:path*", "/login"],
 };

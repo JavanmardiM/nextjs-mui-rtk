@@ -13,6 +13,10 @@ import {
   Box,
   Grid,
   Pagination,
+  Dialog,
+  DialogActions,
+  DialogContent,
+  DialogTitle,
 } from "@mui/material";
 import {
   useDeleteUserMutation,
@@ -20,18 +24,52 @@ import {
 } from "@/services/userService";
 import { useTranslations } from "next-intl";
 import { User } from "@/types/user";
+import { useToastHandler } from "@/hooks/useToastHandler";
 
 export default function Users() {
   const [page, setPage] = useState(1);
-  const { data: userData, error, isLoading } = useFetchUsersQuery(page);
+  const {
+    data: userData,
+    error,
+    isLoading,
+    refetch,
+  } = useFetchUsersQuery(page);
   const [deleteUser] = useDeleteUserMutation();
   const t = useTranslations();
+  const { showToast } = useToastHandler();
+
+  const [openDialog, setOpenDialog] = useState(false);
+  const [userToDelete, setUserToDelete] = useState<User | null>(null);
 
   const handleChangePage = (
     event: React.ChangeEvent<unknown>,
     value: number
   ) => {
     setPage(value);
+  };
+
+  const handleDeleteClick = (user: User) => {
+    setUserToDelete(user);
+    setOpenDialog(true);
+  };
+
+  const handleConfirmDelete = () => {
+    if (userToDelete) {
+      deleteUser(userToDelete.id)
+        .unwrap()
+        .then(() => {
+          showToast(t("USER_DELETE_SUCCESS"), "success");
+          refetch();
+        })
+        .catch(() => {
+          showToast(t("USER_DELETE_ERROR"), "error");
+        });
+    }
+    setOpenDialog(false);
+  };
+
+  const handleCancelDelete = () => {
+    setOpenDialog(false);
   };
 
   if (isLoading)
@@ -95,7 +133,7 @@ export default function Users() {
                 <Button
                   variant="outlined"
                   color="error"
-                  onClick={() => deleteUser(user.id)}
+                  onClick={() => handleDeleteClick(user)}
                 >
                   {t("USER_DELETE")}
                 </Button>
@@ -113,6 +151,27 @@ export default function Users() {
           shape="rounded"
         />
       </Box>
+
+      <Dialog open={openDialog} onClose={handleCancelDelete}>
+        <DialogTitle>{t("DIALOG_TITLE")}</DialogTitle>
+        <DialogContent>
+          <Typography>
+            {t("DIALOG_MESSAGE", {
+              title: userToDelete
+                ? `${userToDelete.first_name} ${userToDelete.last_name}`
+                : "",
+            })}
+          </Typography>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleCancelDelete} color="primary">
+            {t("DIALOG_CANCEL")}
+          </Button>
+          <Button onClick={handleConfirmDelete} color="secondary">
+            {t("DIALOG_DELETE")}
+          </Button>
+        </DialogActions>
+      </Dialog>
     </Container>
   );
 }

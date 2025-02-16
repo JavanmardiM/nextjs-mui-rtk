@@ -44,10 +44,15 @@
   "DIALOG_CANCEL": "انصراف",
   "DIALOG_MESSAGE": "آیا از حذف این مورد اطمینان دارید؟",
 
+  "DASHBOARD_WELCOME_MESSAGE": "به خانه خوش آمدید!",
+  "DASHBOARD_USER_BUTTON": "برو به لیست کاربران",
+
   "USER_LIST": "لیست کاربران",
   "USER_USERNAME": "نام : {firstName} {lastName}",
   "USER_VIEW": "نمایش",
   "USER_EDIT": "ویرایش",
   "USER_DELETE": "حذف",
-  "USER_ERROR_LOADING": "دریافت لیست کاربران با مشکل مواجه شد!"
+  "USER_ERROR_LOADING": "دریافت لیست کاربران با مشکل مواجه شد!",
+  "USER_DELETE_SUCCESS": "کاربر با موفقیت حذف شد.",
+  "USER_DELETE_ERROR": "در حذف کاربر خطایی پیش آمد."
 }

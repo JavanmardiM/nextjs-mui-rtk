@@ -25,6 +25,7 @@ import {
 import { useTranslations } from "next-intl";
 import { User } from "@/types/user";
 import { useToastHandler } from "@/hooks/useToastHandler";
+import { useRouter } from "next/navigation";
 
 export default function Users() {
   const [page, setPage] = useState(1);
@@ -37,6 +38,8 @@ export default function Users() {
   const [deleteUser] = useDeleteUserMutation();
   const t = useTranslations();
   const { showToast } = useToastHandler();
+
+  const router = useRouter();
 
   const [openDialog, setOpenDialog] = useState(false);
   const [userToDelete, setUserToDelete] = useState<User | null>(null);
@@ -72,6 +75,10 @@ export default function Users() {
     setOpenDialog(false);
   };
 
+  const handleCreateUser = () => {
+    router.push("/admin/users/add");
+  };
+
   if (isLoading)
     return (
       <Box
@@ -103,6 +110,13 @@ export default function Users() {
       <Typography variant="h4" gutterBottom>
         {t("USER_LIST")}
       </Typography>
+      <Box
+        sx={{ display: "flex", justifyContent: "flex-end", marginBottom: 2 }}
+      >
+        <Button variant="contained" color="primary" onClick={handleCreateUser}>
+          {t("USER_CREATE_LABEL")}
+        </Button>
+      </Box>
       <Grid container spacing={3}>
         {userData?.data.map((user: User) => (
           <Grid item xs={12} sm={6} md={4} key={user.id}>
@@ -118,15 +132,8 @@ export default function Users() {
               <CardActions>
                 <Button
                   variant="contained"
-                  color="primary"
-                  onClick={() => console.log("View", user.id)}
-                >
-                  {t("USER_VIEW")}
-                </Button>
-                <Button
-                  variant="contained"
                   color="secondary"
-                  onClick={() => console.log("Edit", user.id)}
+                  onClick={() => router.push(`/admin/users/${user.id}`)}
                 >
                   {t("USER_EDIT")}
                 </Button>

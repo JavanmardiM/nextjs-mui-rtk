@@ -49,10 +49,17 @@
 
   "USER_LIST": "User List",
   "USER_USERNAME": "Full Name: {firstName} {lastName}",
+  "USER_FIRST_NAME": "First Name",
+  "USER_LAST_NAME": "Last Name",
+  "USER_ADD_NEW": "Add New User",
+  "USER_EMAIL": "Email",
   "USER_VIEW": "View",
-  "USER_EDIT": "Edit",
+  "USER_EDIT": "View & Edit",
   "USER_DELETE": "Delete",
+  "USER_CREATE_LABEL": "Create New User",
   "USER_ERROR_LOADING": "Failed to load users.",
   "USER_DELETE_SUCCESS": "User deleted successfully",
-  "USER_DELETE_ERROR": "Failed to delete user."
+  "USER_DELETE_ERROR": "Failed to delete user.",
+  "USER_CREATE_SUCCESS": "User created successfully",
+  "USER_CREATE_ERROR": "Failed to create user."
 }

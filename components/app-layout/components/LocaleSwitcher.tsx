@@ -39,6 +39,7 @@ export default function LocaleSwitcher() {
       <Button
         variant="contained"
         onClick={handleClick}
+        disabled={isPending}
         endIcon={<span className="arrow-down-icon" />}
       >
         {t(locale)}
